@@ -18,3 +18,5 @@ if layout == "colemak" then
 else
 	require("richard.core.qwerty_keymaps")
 end
+
+require("richard.core.shared_keymaps")
