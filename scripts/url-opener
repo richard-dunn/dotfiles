@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+urls=(
+  "https://staff.cameron.local:3000"
+  "https://furniture.cameron.local:3000"
+  "https://furniture.cameron.local:3000/admin"
+  "https://exhibitions.cameron.local:3000/admin"
+  "https://exhibitions.cameron.local:3000/admin/exhibitions"
+  "https://reports.cameron.local:3000"
+  "https://tools.cameron.local:3000"
+  "https://hr.cameron.local:3000"
+  "https://hr.cameron.local:3000/employees/1/overtime_requests"
+  "https://hr.cameron.local:3000/overtime_approvals"
+  "https://furniture.cameron.local:3000/furniture/themes"
+)
+
+url_list=$(printf "%s\n" "${urls[@]}")
+selected=$(echo -e "$url_list" | fzf)
+
+if [[ -n $selected ]]; then
+  open -na "Opera" --args "$selected"
+fi
