@@ -1,13 +1,13 @@
 #!/bin/bash
 
 if [ "$1" == "colemak" ]; then
-  ln -sf ~/dotfiles/tmux/colemak_keybindings.conf ~/.tmux_keybindings.conf
-  echo "Switched to Colemak-DH keybindings"
+  echo "colemak" > ~/.keyboard_layout
+  echo "Remember to restart neovim"
 elif [ "$1" == "qwerty" ]; then
-  ln -sf ~/dotfiles/tmux/qwerty_keybindings.conf ~/.tmux_keybindings.conf
-  echo "Switched to QWERTY keybindings"
+  echo "qwerty" > ~/.keyboard_layout
+  echo "Remember to restart neovim"
 else
-  echo "Usage: switch_tmux_layout.sh [colemak|qwerty]"
+  cat ~/.keyboard_layout
 fi
 
 tmux source-file ~/.tmux.conf
