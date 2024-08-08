@@ -1,0 +1,65 @@
+@import "mocha.css";
+
+* {
+  font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  min-height: 0;
+  min-width: 0;
+}
+
+window#waybar {
+  background: none;
+  color: @lavender;
+}
+
+/* -----------------------------------------------
+ * Clock
+ * ----------------------------------------------- */
+
+#clock {
+  font-weight: bold;
+}
+
+/* -----------------------------------------------
+ * Workspaces
+ * ----------------------------------------------- */
+
+#workspaces {
+  margin: 5px;
+  border-radius: 15px;
+  font-weight: normal;
+  font-style: normal;
+  opacity: 0.7;
+}
+
+#workspaces button {
+  padding: 0px 10px;
+  margin: 0px 3px;
+  border-radius: 15px;
+  background-color: @mauve;
+  color: @mauve;
+  transition: all 0.3s ease-in-out;
+  opacity: 0.4;
+  font-size: 13px;
+}
+
+#workspaces button.active {
+  background-color: @lavender;
+  color: @lavender;
+  border-radius: 15px;
+  min-width: 30px;
+  background-size: 400% 400%;
+  transition: all ease-in-out;
+  opacity: 1;
+}
+
+#workspaces button:hover {
+  background-size: 400% 400%;
+  border: none;
+  outline: none;
+  font-weight: normal;
+  color: @crust;
+  opacity: 0.9;
+  border-radius: 15px;
+  min-width: 30px;
+}
