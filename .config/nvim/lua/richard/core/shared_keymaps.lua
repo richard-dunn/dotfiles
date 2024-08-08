@@ -7,8 +7,6 @@ keymap.set("n", "<C-d>", "<C-d>zz")
 keymap.set("n", "<C-u>", "<C-u>zz")
 
 -- search
-keymap.set("n", "h", "nzzzv")
-keymap.set("n", "H", "Hzzzv")
 keymap.set("n", "<leader>nh", ":nohlsearch<CR>")
 keymap.set("n", "gtt", "/test <CR>zz", { desc = "Goto: Next test" })
 keymap.set("n", "gpt", "?test <CR>zz", { desc = "Goto: Prev test" })
@@ -17,9 +15,6 @@ keymap.set("n", "gts", "/skip<CR>zz", { desc = "Goto: Next skipped test" })
 keymap.set("n", "<leader>ee", ":Explore<CR>")
 
 -- moving code
-keymap.set("v", "N", ":m '>+1<cr>gv=gv")
-keymap.set("v", "E", ":m '<-2<CR>gv=gv")
-keymap.set("n", "N", "mzJ`z")
 keymap.set("n", "yd", "ggVGy<C-o>")
 
 -- tmux

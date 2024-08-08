@@ -1,5 +1,4 @@
 vim.g.mapleader = " "
-
 local keymap = vim.keymap
 
 -- colemak dh remaps
@@ -30,3 +29,12 @@ keymap.set("v", "N", "J")
 keymap.set("v", "E", "K")
 keymap.set("v", "I", "L")
 keymap.set("v", "l", "i")
+
+-- Search
+keymap.set("n", "h", "nzzzv")
+keymap.set("n", "H", "Hzzzv")
+
+-- Moving code
+keymap.set("v", "N", ":m '>+1<cr>gv=gv")
+keymap.set("v", "E", ":m '<-2<CR>gv=gv")
+keymap.set("n", "N", "mzJ`z")
