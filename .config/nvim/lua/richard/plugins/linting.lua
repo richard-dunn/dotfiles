@@ -7,7 +7,7 @@ return {
 		lint.linters_by_ft = {
 			javascript = { "eslint_d" },
 			python = { "pylint" },
-			ruby = { "rubocop" },
+			-- ruby = { "rubocop" },
 		}
 
 		local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
