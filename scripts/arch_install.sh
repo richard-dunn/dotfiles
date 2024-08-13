@@ -127,6 +127,7 @@ git config --global user.email "hello@richard.photos"
 git config --global core.editor "nvim"
 
 # Generate an SSH key
+sudo pacman -S --noconfirm openssh
 if [ ! -f ~/.ssh/id_ed25519 ]; then
   ssh-keygen -t ed25519 -C "hello@richard.photos" -f ~/.ssh/id_ed25519 -N ""
   eval "$(ssh-agent -s)"
