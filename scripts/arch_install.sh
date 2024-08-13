@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# git will be installed before running this and dotfiles will be downloaded to ~/dotfiles/
-# this script will be in ~/dotfiles/scripts/
-
 # Ensure script is run as a non-root user
 if [ "$EUID" -eq 0 ]; then
   echo "Please do not run as root"
@@ -13,7 +10,16 @@ fi
 sudo pacman -Syu --noconfirm
 
 # Make sure basic utilities are installed
-sudo pacman -S --noconfirm base-devel openssl libffi zlib
+sudo pacman -S --noconfirm git base-devel openssl libffi zlib
+
+# Install yay if not already installed
+if ! command -v yay &> /dev/null; then
+  git clone https://aur.archlinux.org/yay.git
+  cd yay
+  makepkg -si
+  cd ..
+  rm -rf yay
+fi
 
 # Install Timeshift
 sudo pacman -S --noconfirm timeshift
@@ -83,10 +89,45 @@ echo 'eval "$(rbenv init -)"' >> ~/.zshrc
 source ~/.zshrc
 git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
 
+
 # Install Ruby and Bundler
 rbenv install 3.1.2
 rbenv global 3.1.2
 gem install bundler
 rbenv rehash
+
+# Install SauceCodePro Nerd Font
+yay -S --noconfirm nerd-fonts-sauce-code-pro
+
+# Install and configure a firewall (UFW)
+sudo pacman -S --noconfirm ufw
+sudo systemctl enable ufw
+sudo systemctl start ufw
+sudo ufw default deny incoming
+sudo ufw default allow outgoing
+sudo ufw enable
+
+# Install PipeWire and related utilities for audio management
+sudo pacman -S --noconfirm pipewire pipewire-pulse wireplumber
+sudo systemctl --user enable pipewire pipewire-pulse wireplumber
+sudo systemctl --user start pipewire pipewire-pulse wireplumber
+
+# Set up Git configuration
+git config --global user.name "Richard Dunn"
+git config --global user.email "hello@richard.photos"
+git config --global core.editor "nvim"
+
+# Generate an SSH key
+if [ ! -f ~/.ssh/id_ed25519 ]; then
+  ssh-keygen -t ed25519 -C "hello@richard.photos" -f ~/.ssh/id_ed25519 -N ""
+  eval "$(ssh-agent -s)"
+  ssh-add ~/.ssh/id_ed25519
+  echo "SSH key generated. Add the following to your GitHub account:"
+  cat ~/.ssh/id_ed25519
+fi
+
+# Post installation cleanup
+sudo pacman -Rns $(pacman -Qdtq) # Remove orphaned packages
+sudo pacman -Sc # Clean the package cache
 
 echo "Installation and configuration complete! Please reboot for all changes to take effect."
