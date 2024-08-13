@@ -10,7 +10,7 @@ fi
 sudo pacman -Syu --noconfirm
 
 # Make sure basic utilities are installed
-sudo pacman -S --noconfirm git base-devel openssl libffi zlib
+sudo pacman -S --noconfirm git base-devel openssl libffi zlib wl-clipboard neofetch
 
 # Install yay if not already installed
 if ! command -v yay &> /dev/null; then
@@ -51,8 +51,11 @@ mkdir -p ~/.config/nvim
 ln -sf ~/dotfiles/.config/nvim/init.lua ~/.config/nvim/init.lua
 ln -sf ~/dotfiles/.config/nvim/lua ~/.config/nvim/lua
 
+# Install lazygit
+sudo pacman -S --noconfirm lazygit
+
 # Install Wayland, Hyprland, Hyprpaper, Waybar and symlink config files
-sudo pacman -S --noconfirm wayland xorg-server-xwayland wayland-protocols hyprland-git hyprpaper waybar
+sudo pacman -S --noconfirm wayland xorg-server-xwayland wayland-protocols hyprland hyprpaper waybar
 ln -sf ~/dotfiles/.config/hypr ~/.config/hypr
 ln -sf ~/dotfiles/.config/waybar ~/.config/waybar  # Adjusted to match common waybar directory
 
@@ -64,11 +67,14 @@ ln -sf ~/dotfiles/.config/kitty ~/.config/kitty
 sudo pacman -S --noconfirm wofi
 ln -sf ~/dotfiles/.config/wofi ~/.config/wofi
 
+# Install dolphin
+sudo pacman -S --noconfirm dolphin
+
 # Install Firefox
 sudo pacman -S --noconfirm firefox
 
 # Install Bluetooth utilities
-sudo pacman -S --noconfirm bluez bluez-utils pulseaudio-bluetooth
+sudo pacman -S --noconfirm bluez bluez-utils
 sudo systemctl enable bluetooth
 sudo systemctl start bluetooth
 
@@ -96,8 +102,11 @@ rbenv global 3.1.2
 gem install bundler
 rbenv rehash
 
-# Install SauceCodePro Nerd Font
-yay -S --noconfirm nerd-fonts-sauce-code-pro
+# Install rails
+gem install rails
+
+# Install fonts
+yay -S --noconfirm nerd-fonts-sauce-code-pro ttf-font-awesome
 
 # Install and configure a firewall (UFW)
 sudo pacman -S --noconfirm ufw
