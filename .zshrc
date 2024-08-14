@@ -34,6 +34,11 @@ zinit snippet OMZP::z
 # Load completions
 autoload -U compinit && compinit
 
+# Initialize rbenv
+if command -v rbenv &>/dev/null; then
+  eval "$(rbenv init - zsh)"
+fi
+
 zinit cdreplay -q
 
 # Keybindings
