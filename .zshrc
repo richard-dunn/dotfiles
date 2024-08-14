@@ -28,7 +28,6 @@ zinit light Aloxaf/fzf-tab
 zinit snippet OMZP::git
 zinit snippet OMZP::rails
 zinit snippet OMZP::rbenv
-zinit snippet OMZP::sudo
 zinit snippet OMZP::z
 
 # Load completions
