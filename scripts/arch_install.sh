@@ -10,7 +10,7 @@ fi
 sudo pacman -Syu --noconfirm
 
 # Make sure basic utilities are installed
-sudo pacman -S --noconfirm git base-devel openssl libffi zlib wl-clipboard neofetch
+sudo pacman -S --noconfirm git base-devel openssl libffi zlib wl-clipboard neofetch less
 
 # Install yay if not already installed
 if ! command -v yay &> /dev/null; then
