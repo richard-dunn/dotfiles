@@ -1,0 +1,108 @@
+window {
+  opacity: 0.8;
+  font-size: 18px;
+  background-color: #1e1e2e;
+}
+
+#outer-box {
+  background: #1e1e2e;
+  border: 2px solid #b4befe;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+#input {
+  background: #11111b;
+  border: 1px solid #b4befe;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  padding: 5px;
+  color: #f5e0dc;
+}
+
+#scroll {
+  background: none;
+  color: white;
+}
+
+/* #inner-box { */
+/* background: green; */
+/* } */
+
+#text {
+  padding: 5px 10px;
+}
+
+/* #img */
+/*     The name of all images in entries displayed in image mode. */
+
+#selected {
+  border: none;
+  outline: none;
+  border-radius: 10px;
+}
+
+#entry:selected {
+  background: #181825;
+  border: 1px solid #f9e2af;
+  border-radius: 5px;
+}
+
+/* #unselected */
+/*     The name of all entries currently unselected. A better way of doing this is to do #entry and combine that with #entry:selected */
+
+/* #selected */
+/*     The name of all entries currently selected. A better way of doing this is to do #entry:selected */
+/* .entry */
+/*     The class attached to all entries. This is attached to the inside property box and is old, you probably want #entry instead */
+/* #entry */
+/*     The name of all entries. */
+/* #expander-box */
+/*     The name of all boxes shown when expanding entries with multiple actions  */
+
+/*   padding: 10px; */
+/*   border: 1px solid #292d3e; */
+/* } */
+/**/
+/* entry { */
+/*   background-color: #292d3e; */
+/*   color: #d9e0ee; */
+/*   border-radius: 5px; */
+/*   padding: 5px; */
+/*   margin: 3px 0; */
+/* } */
+/**/
+/* entry:selected { */
+/*   background-color: #b7bdf8; */
+/*   color: #1e1e2e; */
+/* } */
+/**/
+/* label { */
+/*   color: #c3bac6; */
+/* } */
+/**/
+/* listview { */
+/*   padding: 5px; */
+/* } */
+/**/
+/* scrollbar { */
+/*   background-color: #2e3141; */
+/*   border-radius: 5px; */
+/* } */
+/**/
+/* scrollbar slider { */
+/*   background-color: #96cdfb; */
+/*   border-radius: 5px; */
+/* } */
+/**/
+/* #prompt { */
+/*   color: #f28fad; */
+/*   padding: 5px; */
+/*   margin-bottom: 10px; */
+/*   font-size: 30px; */
+/* } */
+/**/
+/* #entry { */
+/*   font-family: "SauceCodePro", monospace; */
+/*   font-size: 12px; */
+/* } */
