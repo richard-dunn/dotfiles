@@ -2,7 +2,7 @@
 
 * {
   font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
-  font-size: 12px;
+  font-size: 16px;
   min-height: 0;
   min-width: 0;
 }
@@ -37,7 +37,7 @@ window#waybar {
   margin: 0px 3px;
   border-radius: 15px;
   background-color: @mauve;
-  color: @mauve;
+  color: @crust;
   transition: all 0.3s ease-in-out;
   opacity: 0.4;
   font-size: 13px;
@@ -45,7 +45,7 @@ window#waybar {
 
 #workspaces button.active {
   background-color: @lavender;
-  color: @lavender;
+  color: @crust;
   border-radius: 15px;
   min-width: 30px;
   background-size: 400% 400%;
@@ -58,7 +58,6 @@ window#waybar {
   border: none;
   outline: none;
   font-weight: normal;
-  color: @crust;
   opacity: 0.9;
   border-radius: 15px;
   min-width: 30px;

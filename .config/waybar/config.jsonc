@@ -11,11 +11,10 @@
   "spacing": 10, // Gaps between modules (4px)
   // Choose the order of the modules
   "modules-left": [
-    "clock"
-  ],
-  "modules-center": [
+    "clock",
     "hyprland/workspaces"
   ],
+  "modules-center": [],
   "modules-right": [
     // "mpd",
     // "idle_inhibitor",
@@ -34,18 +33,12 @@
     // "custom/power"
   ],
   "hyprland/workspaces": {
-    "on-scroll-up": "hyprctl dispatch workspace r-1",
-    "on-scroll-down": "hyprctl dispatch workspace r+1",
-    "on-click": "activate",
-    "all-outputs": true,
-    "format": "{}",
+    "active-only": "true",
+    "format": "{name}",
     "format-icons": {
       "urgent": "",
       "active": "",
       "default": ""
-    },
-    "persistent-workspaces": {
-      "*": 5
     }
   },
   // Modules configuration
