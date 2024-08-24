@@ -16,21 +16,11 @@
   ],
   "modules-center": [],
   "modules-right": [
-    // "mpd",
-    // "idle_inhibitor",
-    // "pulseaudio",
     "network",
-    // "power-profiles-daemon",
-    // "cpu",
-    // "memory",
-    // "temperature",
-    // "backlight",
-    // "keyboard-state",
-    // "sway/language",
-    "battery"
-    // "battery#bat2",
+    "bluetooth",
+    "pulseaudio",
     // "tray",
-    // "custom/power"
+    "battery"
   ],
   "hyprland/workspaces": {
     "active-only": "true",
