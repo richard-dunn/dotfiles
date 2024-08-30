@@ -50,3 +50,5 @@ alias kb='~/dotfiles/scripts/switch_keyboard_layout.sh'
 if [ -f /usr/share/bash-completion/bash_completion ]; then
   . /usr/share/bash-completion/bash_completion
 fi
+
+export EDITOR=nvim
