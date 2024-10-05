@@ -6,6 +6,12 @@ elif [ -f /usr/share/git/git-prompt.sh ]; then
   source /usr/share/git/git-prompt.sh
 fi
 
+# Start the ssh-agent if not already running
+if [ -z "$SSH_AUTH_SOCK" ]; then
+  eval "$(ssh-agent -s)"
+  ssh-add ~/.ssh/id_ed25519
+fi
+
 # Colours (from Catppuccin Mocha)
 if [[ "$TERM" =~ "xterm"|"screen"|"tmux" ]]; then
   BLUE="\[\e[38;5;110m\]"  # #89B4FA
